@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
+document.getElementById("answer-box").addEventListener("keydown", function(event) {
+    if (event.key === "Enter"){
+        checkAnswer()
+    }
+})
   runGame("addition");
 
 });
@@ -21,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
  * and after the users answer has been processed 
 */
 function runGame(gameType) {
+
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus();
+
 
     // Creates 2 random numbers 
 
